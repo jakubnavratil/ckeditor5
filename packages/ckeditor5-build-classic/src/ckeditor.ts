@@ -26,6 +26,11 @@ import { Table, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 
+import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting';
+import GeneralHtmlSupport from '@ckeditor/ckeditor5-html-support/src/generalhtmlsupport';
+import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
+import AutoImage from '@ckeditor/ckeditor5-image/src/autoimage';
+
 export default class ClassicEditor extends ClassicEditorBase {
 	public static override builtinPlugins = [
 		Essentials,
@@ -53,7 +58,12 @@ export default class ClassicEditor extends ClassicEditorBase {
 		PictureEditing,
 		Table,
 		TableToolbar,
-		TextTransformation
+		TextTransformation,
+
+		GeneralHtmlSupport,
+		SourceEditing,
+		ImageInsert,
+		AutoImage
 	];
 
 	public static override defaultConfig = {
@@ -62,8 +72,9 @@ export default class ClassicEditor extends ClassicEditorBase {
 				'undo', 'redo',
 				'|', 'heading',
 				'|', 'bold', 'italic',
-				'|', 'link', 'uploadImage', 'insertTable', 'blockQuote', 'mediaEmbed',
-				'|', 'bulletedList', 'numberedList', 'outdent', 'indent'
+				'|', 'link', 'insertImage', 'insertTable', 'blockQuote', 'mediaEmbed',
+				'|', 'bulletedList', 'numberedList', 'outdent', 'indent',
+				'|', 'sourceEditing'
 			]
 		},
 		image: {
